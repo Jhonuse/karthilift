@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAARTHI LIFTS | Elite Personal Training & Body Transformation</title>
+    <meta name="description" content="Transform your physique with Kaarthi Lifts. 3+ years coaching, 20+ client success stories, structured hypertrophy, fat loss, and biomechanics-focused training.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="site-nav" id="site-nav">
+        <a href="#" class="nav-brand" id="brand-logo">
+            <span class="bat-brand-icon">
+                <svg viewBox="0 0 100 48" width="28" height="15" fill="currentColor">
+                    <path d="M50 8 L54 16 L62 16 L65 14 L75 24 L85 18 L100 24 L88 34 L78 32 L68 38 L58 34 L50 44 L42 34 L32 38 L22 32 L12 34 L0 24 L15 18 L25 24 L35 14 L38 16 L46 16 Z"/>
+                </svg>
+            </span>
+            <span class="brand-text">KAARTHI <span>LIFTS</span></span>
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#programs" class="nav-link">Programs</a></li>
+            <li><a href="#method" class="nav-link">Method</a></li>
+            <li><a href="#results" class="nav-link">Results</a></li>
+            <li><a href="#pricing" class="nav-link">Pricing</a></li>
+            <li><a href="#faq" class="nav-link">FAQ</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="public/client/login.html" class="nav-link nav-link-cta">Client Login</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="#contact" class="btn btn-primary" id="nav-cta-btn">START NOW</a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- REAL-TIME LIVE COHORT RIBBON -->
+    <div class="live-cohort-ribbon" id="live-cohort-ribbon">
+        <div class="ribbon-inner">
+            <span class="ribbon-tag"><span class="pulse-dot-gold"></span> REAL-TIME STATUS</span>
+            <span class="ribbon-text">Cohort: <strong id="ribbon-batch-name">March 2026 Elite</strong> &bull; Only <strong id="ribbon-slots-count" class="gold-highlight">3</strong> coaching spots left</span>
+            <span class="ribbon-coach"><span class="live-indicator-green"></span> <span id="ribbon-coach-status">Coach Online & Reviewing</span></span>
+            <span class="ribbon-viewers">👁️ <strong id="ribbon-visitor-count">1</strong> lifters viewing</span>
+        </div>
+    </div>
+
+    <!-- 800VH SCROLL-DRIVEN HERO SECTION -->
+    <section class="scroll-container" id="hero-experience">
+        <div class="sticky-wrapper">
+            <canvas id="hero-canvas"></canvas>
+            <div class="canvas-vignette">
+                <div class="bat-signal-light" id="gotham-spotlight"></div>
+            </div>
+
+            <!-- Center in Front White & Yellow Theme Textline -->
+            <div class="hero-center-headline" id="hero-center-headline">
+                <h1 class="hero-center-title">KAARTHI <span class="gold-text">LIFTS</span></h1>
+                <p class="hero-center-tagline">FORGED IN DISCIPLINE &bull; PROVEN IN RESULTS</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section transformation-spotlight" id="latest-transformation">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag"><span>//</span> FRESH OFF THE PROGRAM</div>
+                <h2 class="section-title">LATEST <span>TRANSFORMATION</span></h2>
+                <p class="section-desc">Real struggle. Real discipline. Real results — updated as new clients finish their program.</p>
+            </div>
+            <div id="transformation-card-wrap" class="transformation-card-wrap"></div>
+        </div>
+    </section>
+
+    <!-- COACHING PHASES (ALWAYS VISIBLE, NO SCROLL EFFECT) -->
+    <section class="section" id="phases">
+        <div class="container">
+            <div class="phases-grid">
+                <!-- Glassmorphism Box 1 -->
+                <div class="text-box" id="box1">
+                    <span class="text-box-tag">Phase 01 &bull; Personal Training</span>
+                    <h2>PERSONAL TRAINING</h2>
+                    <p class="pricing-tagline">"Build the base. Prove the process."</p>
+                    <p>3 years coaching real clients through structured programs. From first-time lifters to committed bulk and cut cycles &mdash; built around one uncompromising goal: getting you to the physique and lifestyle you've pictured.</p>
+                    <div class="text-box-metrics">
+                        <div class="metric-item">
+                            <div class="metric-num">3+</div>
+                            <div class="metric-label">Years Coaching</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-num">20+</div>
+                            <div class="metric-label">Clients Trained</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-num">100%</div>
+                            <div class="metric-label">Commitment</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-num">5 Days</div>
+                            <div class="metric-label">Weekly Regimen</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Glassmorphism Box 2 -->
+                <div class="text-box" id="box2">
+                    <span class="text-box-tag">Phase 02 &bull; Training Philosophy</span>
+                    <h2>TRAINING PHILOSOPHY</h2>
+                    <p class="pricing-tagline">"Discipline over motivation. Consistency over intensity."</p>
+                    <p>Form over ego. I train people to conquer their limits and achieve their dreams &mdash; one calculated rep, one progressive program at a time.</p>
+                    <div class="text-box-metrics">
+                        <div class="metric-item">
+                            <div class="metric-num">01</div>
+                            <div class="metric-label">Form First</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-num">02</div>
+                            <div class="metric-label">Progressive Load</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-num">03</div>
+                            <div class="metric-label">Strict Nutrition</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-num">04</div>
+                            <div class="metric-label">Zero Excuses</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Glassmorphism Box 3 -->
+                <div class="text-box" id="box3">
+                    <span class="text-box-tag">Phase 03 &bull; Proven Results</span>
+                    <h2>PROVEN RESULTS</h2>
+                    <p class="pricing-tagline">"Real people. Verifiable transformations."</p>
+                    <p>Sustainable muscle gain and disciplined fat shedding tailored specifically to your anatomy, schedule, and lifestyle.</p>
+                    <div class="text-box-metrics">
+                        <div class="metric-item">
+                            <div class="metric-num">3 YRS</div>
+                            <div class="metric-label">COACHING</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-num">20+</div>
+                            <div class="metric-label">CLIENTS</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-num">98%</div>
+                            <div class="metric-label">SUCCESS RATE</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-num">5 DAYS</div>
+                            <div class="metric-label">A WEEK</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN LANDING PAGE CONTENT (FLOWS SEAMLESSLY BELOW CANVAS) -->
+    <main>
+        <!-- ABOUT & STORY SECTION -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image-wrapper">
+                        <div class="client-3d-stage">
+                            <div class="client-3d-cube">
+                                <div class="client-3d-face client-3d-front"><img src="images/coach.jpg" alt="Client 1" loading="lazy"></div>
+                                <div class="client-3d-face client-3d-back"><img src="images/beach-physique.jpg" alt="Client 2" loading="lazy"></div>
+                                <div class="client-3d-face client-3d-right"><img src="images/batman_gym_raw.jpg" alt="Client 3" loading="lazy"></div>
+                                <div class="client-3d-face client-3d-left"><img src="images/batman_red_noir.jpg" alt="Client 4" loading="lazy"></div>
+                            </div>
+                        </div>
+                        <div class="about-badge-float">
+                            <div class="about-badge-icon">
+                                <svg viewBox="0 0 100 48" width="24" height="12" fill="currentColor">
+                                    <path d="M50 8 L54 16 L62 16 L65 14 L75 24 L85 18 L100 24 L88 34 L78 32 L68 38 L58 34 L50 44 L42 34 L32 38 L22 32 L12 34 L0 24 L15 18 L25 24 L35 14 L38 16 L46 16 Z"/>
+                                </svg>
+                            </div>
+                            <div class="about-badge-text">
+                                <h4>KAARTHI</h4>
+                                <p>DARK KNIGHT STANDARD</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-content">
+                        <div class="section-tag">
+                            <span>//</span> THE DARK KNIGHT PHILOSOPHY
+                        </div>
+                        <h2 class="section-title">FORGED IN THE DARK, <span>PROVEN IN THE LIGHT</span></h2>
+                        <p class="about-lead">
+                            "It's not who I am underneath, but what I do that defines me." I build <span>lifelong physical resilience</span> and elite aesthetics through scientific training and iron discipline.
+                        </p>
+                        <div class="about-paragraphs">
+                            <p>
+                                Over the last 3 years, I've guided first-time gym-goers and seasoned athletes alike. My coaching combines precise biomechanics, tailored hypertrophy splits, and sustainable macro strategies so you never spin your wheels again.
+                            </p>
+                            <p>
+                                Whether your objective is dropping stubborn body fat, executing a calculated lean bulk, or breaking through bench and squat plateaus, you will receive a roadmap engineered exclusively for your body.
+                            </p>
+                            <p style="border-left:3px solid var(--primary-gold,#d4af37); padding-left:1rem; font-style:italic;">
+                                <strong>Why I coach:</strong> I struggled for years chasing generic workout plans that led nowhere. Once I learned the science behind training and nutrition, everything changed — and now I coach so no one else has to waste years guessing.
+                            </p>
+                        </div>
+
+                        <div class="pillars-list">
+                            <div class="pillar-item">
+                                <h5>🎯 Biomechanical Precision</h5>
+                                <p>Optimal joint angles & movement execution to maximize hypertrophy while preventing injuries.</p>
+                            </div>
+                            <div class="pillar-item">
+                                <h5>📊 Progressive Overload</h5>
+                                <p>Systematic load, volume, and RPE tracking so you achieve visible progress every single week.</p>
+                            </div>
+                            <div class="pillar-item">
+                                <h5>🥗 Flexible Macro Fueling</h5>
+                                <p>No starving or extreme restrictions. Sustainable nutrition designed around your daily lifestyle.</p>
+                            </div>
+                            <div class="pillar-item">
+                                <h5>🤝 24/7 Accountability</h5>
+                                <p>Direct one-on-one access for feedback, video form reviews, and mindset resets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Counter Strip -->
+                <div class="stats-counter-strip">
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="3" data-suffix="+">0</div>
+                        <div class="stat-label">Years of Coaching</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="20" data-suffix="+">0</div>
+                        <div class="stat-label">Clients Transformed</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="98" data-suffix="%">0</div>
+                        <div class="stat-label">Retention & Success</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="500" data-suffix="+">0</div>
+                        <div class="stat-label">Workouts Designed</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRAINING PROGRAMS SECTION -->
+        <section class="section section-darker" id="programs">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag"><span>//</span> TAILORED PROTOCOLS</div>
+                    <h2 class="section-title">SIGNATURE <span>TRAINING PROGRAMS</span></h2>
+                    <p class="section-desc">Choose the pathway that matches your ambition. Each program includes full nutritional guidance and progressive overload mechanics.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card">
+                        <div class="service-icon-wrap">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 5v14M18 5v14M2 9h4M18 9h4M2 15h4M18 15h4M6 12h12"></path>
+                            </svg>
+                        </div>
+                        <h3>1:1 ELITE COACHING</h3>
+                        <p>Direct hands-on personal coaching in-person or high-touch remote. Ideal for lifters seeking maximum accountability, strict form corrections, and rapid physical evolution.</p>
+                        <ul class="service-features">
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Personalized weekly 5-day training splits</li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Weekly video form analysis & cues</li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom calorie & macronutrient targets</li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> 24/7 direct WhatsApp messaging</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-secondary">Apply for 1:1</a>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card">
+                        <div class="service-icon-wrap">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3>BULK & CUT CYCLES</h3>
+                        <p>Specialized periodization blueprints. Master lean muscle mass accumulation without excess fat gain, or shred body fat while guarding every ounce of hard-earned muscle.</p>
+                        <ul class="service-features">
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Reverse dieting & metabolism protection</li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Hypertrophy volume & deload schedules</li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Peak physique photo prep protocol</li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Weekly weigh-in & caliper progress audits</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Start Recomp</a>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card">
+                        <div class="service-icon-wrap">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3>ONLINE HYBRID ATHLETE</h3>
+                        <p>Full digital coaching ecosystem for busy professionals and students worldwide. Follow your bespoke workout roadmap in your own gym with complete coach oversight.</p>
+                        <ul class="service-features">
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Mobile app workout tracking</li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Exercise technique video tutorials</li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Monthly 1-on-1 strategy call</li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Habit & sleep tracking integration</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-secondary">Explore Online</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE 4-STEP METHOD -->
+        <section class="section" id="method">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag"><span>//</span> THE SYSTEM</div>
+                    <h2 class="section-title">THE 4-STEP <span>TRANSFORMATION BLUEPRINT</span></h2>
+                    <p class="section-desc">A structured, reproducible engineering process that eliminates guesswork and delivers predictable results.</p>
+                </div>
+
+                <div class="process-grid">
+                    <div class="process-card">
+                        <span class="step-num">01</span>
+                        <div class="process-icon">🔍</div>
+                        <h4>Biomechanical Audit</h4>
+                        <p>We evaluate your posture, joint mobility, current strength baselines, training history, and lifestyle constraints.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <span class="step-num">02</span>
+                        <div class="process-icon">📐</div>
+                        <h4>Custom Programming</h4>
+                        <p>You receive an exact 5-day routine engineered to stimulate optimal muscle protein synthesis and target your weak points.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <span class="step-num">03</span>
+                        <div class="process-icon">🥩</div>
+                        <h4>Nutrition Architecture</h4>
+                        <p>We calculate your precise maintenance, deficit, or surplus calories with realistic macro allocations tailored to foods you love.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <span class="step-num">04</span>
+                        <div class="process-icon">⚡</div>
+                        <h4>Progressive Execution</h4>
+                        <p>Weekly check-ins ensure steady progressive overload, adjusting reps, sets, and calories as your body adapts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRANSFORMATIONS & RESULTS -->
+        <section class="section section-darker" id="results">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag"><span>//</span> CASE STUDIES</div>
+                    <h2 class="section-title">REAL CLIENTS. <span>PROVEN RESULTS.</span></h2>
+                    <p class="section-desc">Consistent hard work guided by science. Here is what happens when you commit 100%.</p>
+                </div>
+
+                <div class="results-grid">
+                    <!-- Result Card 1 -->
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="client-meta">
+                                <h4>Vikram R.</h4>
+                                <span>Software Engineer</span>
+                            </div>
+                            <span class="result-time-pill">16 Weeks</span>
+                        </div>
+                        <div class="result-stat-row">
+                            <div class="stat-item">
+                                <div class="val">-14 kg</div>
+                                <div class="lbl">Body Fat</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="val">+4.5 kg</div>
+                                <div class="lbl">Lean Muscle</div>
+                            </div>
+                        </div>
+                        <p class="result-quote">
+                            "Before Kaarthi, I spent 2 years going to the gym without seeing changes. Within 4 months of following his structured split and macro plan, my posture fixed and my abs showed for the first time."
+                        </p>
+                    </div>
+
+                    <!-- Result Card 2 -->
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="client-meta">
+                                <h4>Arjun M.</h4>
+                                <span>College Athlete</span>
+                            </div>
+                            <span class="result-time-pill">24 Weeks</span>
+                        </div>
+                        <div class="result-stat-row">
+                            <div class="stat-item">
+                                <div class="val">+8 kg</div>
+                                <div class="lbl">Clean Bulk</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="val">+45 kg</div>
+                                <div class="lbl">Squat PR</div>
+                            </div>
+                        </div>
+                        <p class="result-quote">
+                            "Kaarthi fixed my hip mobility and showed me how to lift heavy safely. His 'form over ego' philosophy completely changed the way I look at strength training."
+                        </p>
+                    </div>
+
+                    <!-- Result Card 3 -->
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="client-meta">
+                                <h4>Dinesh K.</h4>
+                                <span>Entrepreneur</span>
+                            </div>
+                            <span class="result-time-pill">12 Weeks</span>
+                        </div>
+                        <div class="result-stat-row">
+                            <div class="stat-item">
+                                <div class="val">26% &rarr; 14%</div>
+                                <div class="lbl">Body Fat Drop</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="val">100%</div>
+                                <div class="lbl">Energy Boost</div>
+                            </div>
+                        </div>
+                        <p class="result-quote">
+                            "Working 60 hours a week, I thought I didn't have time. Kaarthi designed a 45-minute high-efficiency split that fit my calendar seamlessly. Truly transformative."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING TIERS -->
+        <section class="section" id="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag"><span>//</span> NO HIDDEN TIERS. NO SURPRISE UPSELLS.</div>
+                    <h2 class="section-title">TRANSPARENT <span>MEMBERSHIP PLANS</span></h2>
+                    <p class="section-desc">Every plan includes a full workout split, a personalized diet chart, and weekly check-ins. The only thing that changes as you go up is <em>how much support and precision</em> you get.</p>
+                </div>
+
+                <!-- Real-time Spots Remaining Progress HUD -->
+                <div class="pricing-slots-hud">
+                    <div class="slots-hud-info">
+                        <div class="slots-hud-left">
+                            <span class="slots-pulse"></span>
+                            <span class="slots-title">Live Intake Cohort: <strong id="pricing-batch-name">March 2026 Elite Cohort</strong></span>
+                        </div>
+                        <div class="slots-hud-right">
+                            <span>Available Spots: <strong id="pricing-slots-count" class="gold-number">3</strong> / <span id="pricing-total-slots">15</span></span>
+                        </div>
+                    </div>
+                    <div class="slots-progress-track">
+                        <div class="slots-progress-fill" id="pricing-slots-bar" style="width: 80%;"></div>
+                    </div>
+                    <p class="slots-subtext">⚡ Real-time synced with Coach Kaarthi's roster. Applications reviewed immediately upon submission.</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Plan 1: Starter (4 Weeks) -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier">STARTER (4 WEEKS)</h3>
+                            <p class="pricing-tagline">"Build the base. Prove the process."</p>
+                        </div>
+                        <div class="pricing-amount">
+                            <span class="pricing-currency">₹</span>
+                            <span class="pricing-val">4,999</span>
+                            <span class="pricing-period">/ 4 weeks</span>
+                        </div>
+                        <ul class="pricing-checklist">
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <div><strong>Custom Workout Split:</strong> Full-body base &rarr; PPL progression</div></li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <div><strong>Tailored Diet Chart:</strong> Calorie & protein targets (Indian-friendly)</div></li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <div><strong>Weekly Check-Ins:</strong> Photos, weight & lift PR audits every 7 days</div></li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <div><strong>Form-Check Reviews:</strong> Technical video cues on request</div></li>
+                        </ul>
+                        <div class="pricing-bestfor">
+                            <strong>Best for:</strong>
+                            First-time lifters testing coaching before long-term commitment.
+                        </div>
+                        <a href="#contact" class="btn btn-secondary select-plan-btn" data-plan="Starter — 4 Weeks (₹4,999)" style="margin-top: 1rem;">Select Starter (4wk)</a>
+                    </div>
+
+                    <!-- Plan 2: Momentum (8 Weeks) - Featured -->
+                    <div class="pricing-card featured">
+                        <div class="featured-badge">MOST POPULAR</div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier">MOMENTUM (8 WEEKS)</h3>
+                            <p class="pricing-tagline">"Everything in Starter &mdash; plus the support to keep you consistent."</p>
+                        </div>
+                        <div class="pricing-amount">
+                            <span class="pricing-currency">₹</span>
+                            <span class="pricing-val">8,999</span>
+                            <span class="pricing-period">/ 8 weeks</span>
+                        </div>
+                        <div class="plan-lead-pill">+ ALL STARTER FEATURES INCLUDED</div>
+                        <ul class="pricing-checklist">
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <div><strong>Two 4-Week Blocks:</strong> Progressive split & diet adjustments at week 4</div></li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <div><strong>1-on-1 Monthly Call:</strong> Form review, mindset & plateau troubleshooting</div></li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <div><strong>Fitness App Access:</strong> In-app workout, meal, and lift progression logging</div></li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <div><strong>Data-Backed Audits:</strong> Continuous check-ins benchmarked against app metrics</div></li>
+                        </ul>
+                        <div class="pricing-bestfor">
+                            <strong>Best for:</strong>
+                            Lifters seeking real accountability and an evolving program.
+                        </div>
+                        <a href="#contact" class="btn btn-primary select-plan-btn" data-plan="Momentum — 8 Weeks (₹8,999)" style="margin-top: 1rem;">Join Momentum (8wk)</a>
+                    </div>
+
+                    <!-- Plan 3: Elite Transformation (12 Weeks) -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier">ELITE TRANSFORMATION (12 WEEKS)</h3>
+                            <p class="pricing-tagline">"Everything in Momentum &mdash; engineered for maximum accuracy."</p>
+                        </div>
+                        <div class="pricing-amount">
+                            <span class="pricing-currency">₹</span>
+                            <span class="pricing-val">11,999</span>
+                            <span class="pricing-period">/ 12 weeks</span>
+                        </div>
+                        <div class="plan-lead-pill">+ ALL MOMENTUM FEATURES INCLUDED</div>
+                        <ul class="pricing-checklist">
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <div><strong>3-Phase Metamorphosis:</strong> Base &rarr; Recomp &rarr; Final "Peak" Phase</div></li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <div><strong>Elite Accuracy Tuning:</strong> Tighter weekly recalibration of macros & loads</div></li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <div><strong>Priority Coach Line:</strong> Direct VIP 1-on-1 strategy access on demand</div></li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <div><strong>Final Media Package:</strong> Full before/after documentation portfolio</div></li>
+                        </ul>
+                        <div class="pricing-bestfor">
+                            <strong>Best for:</strong>
+                            Clients chasing dramatic, camera-ready transformation (@kaarthi_lifts standard).
+                        </div>
+                        <a href="#contact" class="btn btn-secondary select-plan-btn" data-plan="Elite Transformation — 12 Weeks (₹11,999)" style="margin-top: 1rem;">Apply for Elite (12wk)</a>
+                    </div>
+                </div>
+
+                <!-- Comparison at a Glance Table -->
+                <div class="comparison-container">
+                    <div class="comparison-heading">
+                        <h4>COMPARISON AT A GLANCE</h4>
+                    </div>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Starter (4wk)</th>
+                                <th class="col-featured">Momentum (8wk)</th>
+                                <th>Elite (12wk)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Custom workout split</strong></td>
+                                <td>✅</td>
+                                <td class="col-featured">✅ (progressive)</td>
+                                <td>✅ (progressive + peak phase)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Personalized diet chart</strong></td>
+                                <td>✅</td>
+                                <td class="col-featured">✅ (updated per block)</td>
+                                <td>✅ (recalibrated weekly)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Weekly check-ins</strong></td>
+                                <td>✅</td>
+                                <td class="col-featured">✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1-on-1 coaching call</strong></td>
+                                <td>&mdash;</td>
+                                <td class="col-featured">✅ Monthly</td>
+                                <td>✅ Priority access</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fitness tracking app</strong></td>
+                                <td>&mdash;</td>
+                                <td class="col-featured">✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Elite transformation accuracy</strong></td>
+                                <td>&mdash;</td>
+                                <td class="col-featured">&mdash;</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Final transformation package</strong></td>
+                                <td>&mdash;</td>
+                                <td class="col-featured">&mdash;</td>
+                                <td>✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Closing CTA Box -->
+                <div class="pricing-closing-cta">
+                    <div class="pricing-closing-content">
+                        <h4>Every plan stacks &mdash; nothing is ever locked away.</h4>
+                        <p>Start with 4 weeks, or go straight to Elite. DM <a href="https://instagram.com/kaarthi_lifts" target="_blank" rel="noopener">@kaarthi_lifts</a> or submit your details below to get matched to the right tier.</p>
+                    </div>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="https://instagram.com/kaarthi_lifts" target="_blank" rel="noopener" class="btn btn-secondary">DM @kaarthi_lifts &rarr;</a>
+                        <a href="#contact" class="btn btn-primary">Get Matched Now &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="section section-darker" id="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag"><span>//</span> WHAT LIFTERS SAY</div>
+                    <h2 class="section-title">CLIENT <span>TESTIMONIALS</span></h2>
+                    <p class="section-desc">Unfiltered words from dedicated lifters who showed up, put in the reps, and reaped the rewards.</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">
+                                "Kaarthi doesn't just write a program and disappear. He holds you accountable every single day. My bench went from 60kg to 105kg with zero shoulder pain."
+                            </p>
+                        </div>
+                        <div class="reviewer-meta">
+                            <div class="reviewer-avatar">S</div>
+                            <div class="reviewer-details">
+                                <h5>Siddharth P.</h5>
+                                <p>Trained for 10 Months</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">
+                                "The best investment I've ever made in myself. The nutrition framework was so easy to sustain with family dinners. Dropped 12kg without giving up carbs."
+                            </p>
+                        </div>
+                        <div class="reviewer-meta">
+                            <div class="reviewer-avatar">P</div>
+                            <div class="reviewer-details">
+                                <h5>Pradeep V.</h5>
+                                <p>Trained for 6 Months</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">
+                                "His cues for the deadlift and squat unlocked instant strength. Kaarthi is passionate, punctual, and genuine. He treats your goals as his own."
+                            </p>
+                        </div>
+                        <div class="reviewer-meta">
+                            <div class="reviewer-avatar">K</div>
+                            <div class="reviewer-details">
+                                <h5>Karthik N.</h5>
+                                <p>Trained for 1 Year</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ ACCORDION -->
+        <section class="section" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag"><span>//</span> COMMON QUESTIONS</div>
+                    <h2 class="section-title">FREQUENTLY ASKED <span>QUESTIONS</span></h2>
+                    <p class="section-desc">Everything you need to know before stepping into your transformation journey.</p>
+                </div>
+
+                <div class="faq-wrap">
+                    <!-- FAQ 1: Fat Loss & Weight Gaining -->
+                    <div class="faq-item open">
+                        <button class="faq-question">
+                            <span>1. Fat Loss & Weight Gaining: How do you program for fat loss versus clean weight gain?</span>
+                            <span class="faq-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Both goals are governed by precise energy balance and nutrient partitioning. For <strong>Fat Loss</strong>, we establish a controlled 15–20% caloric deficit with elevated protein intake (1.8–2.2g per kg) and heavy compound resistance training to aggressively burn body fat while protecting lean muscle mass. For <strong>Weight Gaining</strong>, we avoid sloppy "dirty bulking" and instead deploy a calculated 250–400 kcal surplus to stimulate lean muscle hypertrophy with near-zero unnecessary adipose storage. Your weekly check-ins guarantee your plan is adjusted as your metabolism adapts.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2: Cutting & Bulking -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>2. Cutting & Bulking: How do I know whether to cut or bulk first, and how long does a cycle take?</span>
+                            <span class="faq-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We determine this during your initial biomechanical audit. Lifters above ~18% body fat start with a structured <strong>Cut</strong> to improve insulin sensitivity, hormone health, and uncover baseline muscle definition. Leaner lifters begin a periodized <strong>Clean Bulk</strong> over 8 to 16 weeks to pack on dense muscle tissue. Crucially, every cutting cycle concludes with a calculated <em>reverse diet</em> so your metabolic rate revs back up without rebound weight gain.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3: Strength & Agility Training -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>3. Strength & Agility Training: Can I build heavy lifting power while improving agility and mobility?</span>
+                            <span class="faq-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. Aesthetic muscle is meaningless if your joints hurt and you can't move dynamically. Our system couples heavy compound lifts (squats, deadlifts, overhead presses) with tempo progression and RPE tracking for raw neuromuscular strength, combined with plyometrics, rotational core stability, and thoracic/hip mobility circuits. You will build a hybrid athletic physique that performs just as impressively as it looks.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4: Healthcare & Habitat -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>4. Healthcare & Habitat: How do sleep, stress, ergonomics, and daily habit environments factor in?</span>
+                            <span class="faq-icon">&#9660;</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You only spend 1 hour in the gym—the remaining 23 hours in your daily habitat determine up to 80% of your transformation. We take a holistic preventive healthcare approach: dialing in sleep quality (essential for natural growth hormone release and testosterone regulation), optimizing hydration, fixing desk-bound posture issues, and lowering systemic cortisol. We engineer micro-habits that seamlessly integrate into your busy schedule so your progress becomes permanent.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE MACRO & CALORIE CALCULATOR -->
+        <section class="section" id="macro-calculator-section" style="padding-top: 3rem; padding-bottom: 2rem;">
+            <div class="container">
+                <div class="calculator-card">
+                    <div class="calc-header">
+                        <div class="section-tag"><span>//</span> BIOMECHANICS & METABOLIC TARGETS</div>
+                        <h3 class="calc-title">SMART <span>MACRO & CALORIE CALCULATOR</span></h3>
+                        <p class="calc-desc">Calculate your baseline target for Hypertrophy, Recomposition, or Aggressive Fat Loss &mdash; then attach it straight to your consultation in one click.</p>
+                    </div>
+
+                    <div class="calc-grid">
+                        <div class="calc-inputs">
+                            <div class="calc-input-group">
+                                <label for="calc-weight">Current Bodyweight (kg)</label>
+                                <input type="number" id="calc-weight" class="form-control" value="75" min="40" max="180">
+                            </div>
+                            <div class="calc-input-group">
+                                <label for="calc-height">Height (cm)</label>
+                                <input type="number" id="calc-height" class="form-control" value="175" min="120" max="230">
+                            </div>
+                            <div class="calc-input-group">
+                                <label for="calc-target-goal">Primary Target</label>
+                                <select id="calc-target-goal" class="form-control">
+                                    <option value="cut">Aggressive Fat Loss & Shred (-20%)</option>
+                                    <option value="bulk" selected>Lean Muscle Hypertrophy (+12%)</option>
+                                    <option value="recomp">Body Recomposition (Maintenance)</option>
+                                </select>
+                            </div>
+                            <div class="calc-input-group">
+                                <label for="calc-activity">Training Activity</label>
+                                <select id="calc-activity" class="form-control">
+                                    <option value="moderate" selected>3-5 Lifting Days / Week</option>
+                                    <option value="heavy">5-6 Heavy Lifting Days / Week</option>
+                                    <option value="light">1-2 Days Light Activity</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="calc-results">
+                            <div class="calc-stat-primary">
+                                <span class="calc-result-label">ESTIMATED DAILY CALORIES</span>
+                                <div class="calc-calories-val"><span id="calc-res-calories">2,650</span> <span class="calc-unit">kcal/day</span></div>
+                            </div>
+
+                            <div class="calc-macro-breakdown">
+                                <div class="macro-pill">
+                                    <span class="macro-pill-val" id="calc-res-protein">165g</span>
+                                    <span class="macro-pill-label">🥩 Protein</span>
+                                </div>
+                                <div class="macro-pill">
+                                    <span class="macro-pill-val" id="calc-res-carbs">310g</span>
+                                    <span class="macro-pill-label">🍚 Carbs</span>
+                                </div>
+                                <div class="macro-pill">
+                                    <span class="macro-pill-val" id="calc-res-fats">65g</span>
+                                    <span class="macro-pill-label">🥑 Fats</span>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-secondary btn-attach-macro" id="btn-attach-macro" style="width: 100%; margin-top: 1rem;">
+                                ⚡ Attach Macro Profile To My Consultation
+                            </button>
+                            <span id="macro-attached-badge" style="display:none; color: var(--primary-gold); font-size: 0.8rem; text-align: center; margin-top: 0.5rem;">✓ Macro profile attached to consultation form below</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & BOOKING FORM -->
+        <section class="section section-darker" id="contact">
+            <div class="container">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div>
+                            <div class="section-tag"><span>//</span> GET STARTED &bull; REAL-TIME INTAKE</div>
+                            <h3>READY TO REBUILD <span>YOUR PHYSIQUE?</span></h3>
+                            <p>
+                                Spaces are strictly capped to ensure every client gets personalized attention. Fill out the intake form or track your existing application in real time.
+                            </p>
+                            <div class="track-lookup-strip">
+                                <span>Already submitted an inquiry?</span>
+                                <button type="button" class="link-btn" id="open-tracker-btn">Track Application Status &rarr;</button>
+                            </div>
+                        </div>
+
+                        <div class="direct-channels">
+                            <div class="channel-item">
+                                <div class="channel-icon">💬</div>
+                                <div class="channel-meta">
+                                    <h5>Direct WhatsApp</h5>
+                                    <p>Fastest reply &bull; Direct coach chat</p>
+                                </div>
+                            </div>
+                            <div class="channel-item">
+                                <div class="channel-icon">✉️</div>
+                                <div class="channel-meta">
+                                    <h5>Official Email</h5>
+                                    <p><a href="mailto:kaarthilifts@gmail.com" style="color: var(--primary-gold); text-decoration: none; font-weight: 600;">kaarthilifts@gmail.com</a></p>
+                                </div>
+                            </div>
+                            <div class="channel-item">
+                                <div class="channel-icon">📍</div>
+                                <div class="channel-meta">
+                                    <h5>Coaching Delivery</h5>
+                                    <p>Hybrid: 1-on-1 Gym & Remote Global</p>
+                                </div>
+                            </div>
+                            <div class="channel-item">
+                                <div class="channel-icon">⚡</div>
+                                <div class="channel-meta">
+                                    <h5>Response Window</h5>
+                                    <p>Within 12 to 24 hours guaranteed</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2rem;">
+                            <button type="button" class="btn btn-secondary" id="whatsapp-direct-btn" style="width: 100%;">
+                                Quick WhatsApp Chat &rarr;
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Consultation Form -->
+                    <form class="contact-form" id="contact-form">
+                        <div id="form-notification" class="form-notification"></div>
+                        <div class="form-step-indicator"><span id="step-indicator-text">Step 1 of 2 — Your Details</span></div>
+
+                        <div class="form-step active" id="form-step-1">
+                        <!-- 1. Name & Age -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="client-name">Your Full Name *</label>
+                                <input type="text" id="client-name" class="form-control" placeholder="e.g. Rahul Sharma" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="client-age">Age *</label>
+                                <input type="number" id="client-age" class="form-control" placeholder="e.g. 24" min="15" max="80" required>
+                            </div>
+                        </div>
+
+                        <!-- 2. Gender & Phone -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="client-gender">Male or Female (Gender) *</label>
+                                <select id="client-gender" class="form-control" required>
+                                    <option value="" disabled selected>Select gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other / Prefer not to say">Other / Prefer not to say</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="client-phone">Phone / WhatsApp Number *</label>
+                                <input type="tel" id="client-phone" class="form-control" placeholder="+91 98765 43210" required>
+                            </div>
+                        </div>
+
+                        <!-- 3. Email & Instagram ID -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="client-email">Email Address *</label>
+                                <input type="email" id="client-email" class="form-control" placeholder="rahul@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="client-instagram">Instagram ID</label>
+                                <input type="text" id="client-instagram" class="form-control" placeholder="@yourhandle (e.g. @rahul_lifts)">
+                            </div>
+                        </div>
+
+                        <!-- 4. Working Person or Student & Workout Time Availability -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="client-occupation">Working Person or Student? *</label>
+                                <select id="client-occupation" class="form-control" required>
+                                    <option value="" disabled selected>Select your current routine</option>
+                                    <option value="Working Professional (Desk / Corporate)">Working Professional (Desk / Corporate)</option>
+                                    <option value="Working Professional (Field / Active)">Working Professional (Field / Active)</option>
+                                    <option value="College / University Student">College / University Student</option>
+                                    <option value="Self-Employed / Business Owner">Self-Employed / Business Owner</option>
+                                    <option value="Homemaker / Other">Homemaker / Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="client-workout-time">Your Availability of Workout Time *</label>
+                                <select id="client-workout-time" class="form-control" required>
+                                    <option value="" disabled selected>Choose your workout window</option>
+                                    <option value="Early Morning (5:30 AM – 7:30 AM)">Early Morning (5:30 AM – 7:30 AM)</option>
+                                    <option value="Morning (7:30 AM – 10:00 AM)">Morning (7:30 AM – 10:00 AM)</option>
+                                    <option value="Afternoon (12:00 PM – 3:00 PM)">Afternoon (12:00 PM – 3:00 PM)</option>
+                                    <option value="Evening (5:00 PM – 8:00 PM)">Evening (5:00 PM – 8:00 PM)</option>
+                                    <option value="Night (8:00 PM – 11:00 PM)">Night (8:00 PM – 11:00 PM)</option>
+                                    <option value="Flexible / Varies Day-to-Day">Flexible / Varies Day-to-Day</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" id="form-next-btn" style="width:100%; padding:1rem;">Continue &rarr;</button>
+                        </div>
+
+                        <div class="form-step" id="form-step-2">
+                        <!-- 5. Fitness Target (weight loss, bulking, cutting) & Program -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="client-goal">Fitness Target (Weight Loss, Bulking, Cutting) *</label>
+                                <select id="client-goal" class="form-control" required>
+                                    <option value="" disabled selected>Select primary fitness goal</option>
+                                    <option value="Weight Loss & Aggressive Shred">Weight Loss (Aggressive Shred)</option>
+                                    <option value="Bulking / Muscle Hypertrophy">Bulking (Lean Muscle Hypertrophy)</option>
+                                    <option value="Cutting & Lean Definition">Cutting (Shred Fat & Keep Muscle)</option>
+                                    <option value="Body Recomposition">Body Recomposition (Fat Loss + Muscle Gain)</option>
+                                    <option value="Strength & Biomechanics">Strength & Biomechanics Performance</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="client-plan">Selected Program Duration *</label>
+                                <select id="client-plan" class="form-control" required>
+                                    <option value="Starter — 4 Weeks (₹4,999)">Starter (4 Weeks) — ₹4,999</option>
+                                    <option value="Momentum — 8 Weeks (₹8,999)" selected>Momentum (8 Weeks) — ₹8,999 (Most Popular)</option>
+                                    <option value="Elite Transformation — 12 Weeks (₹11,999)">Elite Transformation (12 Weeks) — ₹11,999</option>
+                                    <option value="Undecided / Custom Consultation">Undecided / Coach Recommendation</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- 6. Budget & Payment Preference -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="client-budget">Budget I Can Afford To Make My Fitness *</label>
+                                <select id="client-budget" class="form-control" required>
+                                    <option value="" disabled selected>Select affordable monthly budget</option>
+                                    <option value="₹3,000 – ₹5,000 / month">₹3,000 – ₹5,000 / month (Starter)</option>
+                                    <option value="₹5,000 – ₹9,000 / month">₹5,000 – ₹9,000 / month (Momentum)</option>
+                                    <option value="₹9,000 – ₹15,000 / month">₹9,000 – ₹15,000 / month (Elite Coaching)</option>
+                                    <option value="Flexible / Focused on Best Results">Flexible / Focused on Best Results</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="client-payment">Preferred Payment Method *</label>
+                                <select id="client-payment" class="form-control" required>
+                                    <option value="" disabled selected>Select payment mode</option>
+                                    <option value="UPI (GPay / PhonePe / Paytm)">UPI (Google Pay / PhonePe / Paytm)</option>
+                                    <option value="Credit / Debit Card">Credit / Debit Card</option>
+                                    <option value="Net Banking / IMPS">Net Banking / IMPS Transfer</option>
+                                    <option value="EMI / Split in 2 Installments">EMI / Split into 2 Installments</option>
+                                    <option value="Pay After Consultation Call">Pay After Initial Consultation Call</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- 7. Struggles faced towards journey -->
+                        <div class="form-group">
+                            <label for="client-struggles">The Struggles You Face Towards Your Journey *</label>
+                            <textarea id="client-struggles" class="form-control" rows="3" placeholder="What has been holding you back? (e.g. inconsistent nutrition, hitting a plateau, lack of gym guidance, past back/knee injury, hectic work hours...)" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.15rem; font-size: 1.05rem;">
+                            SUBMIT CONSULTATION REQUEST &rarr;
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="form-back-btn" style="width:100%; margin-top:.6rem;">&larr; Back</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h4>KAARTHI <span>LIFTS</span></h4>
+                    <p>Elite personal coaching engineered around discipline, biomechanical precision, and sustainable lifestyle transformation.</p>
+                    <p style="margin-top: 0.6rem; font-size: 0.88rem; color: #a3a3a8;">
+                        <a href="mailto:kaarthilifts@gmail.com" style="color: var(--primary-gold); text-decoration: none; font-weight: 600;">kaarthilifts@gmail.com</a> &bull; <a href="https://kaarthilifts.com" target="_blank" rel="noopener" style="color: #d1d1d6; text-decoration: none;">kaarthilifts.com</a>
+                    </p>
+                    <div class="footer-social-links">
+                        <a href="mailto:kaarthilifts@gmail.com" class="social-btn" aria-label="Email" title="Direct Email">✉️</a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">IG</a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube">YT</a>
+                        <a href="https://wa.me" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">WA</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Navigation</h5>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#method">Method</a></li>
+                        <li><a href="#results">Results</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Programs</h5>
+                    <ul>
+                        <li><a href="#programs">1:1 Personal Coaching</a></li>
+                        <li><a href="#programs">Bulk & Cut Cycles</a></li>
+                        <li><a href="#programs">Hybrid Online Training</a></li>
+                        <li><a href="#pricing">Pricing Tiers</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Philosophy</h5>
+                    <p style="font-size: 0.9rem; color: #a3a3a8; line-height: 1.6;">
+                        "Discipline over motivation. Consistency over intensity. Form over ego."
+                    </p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="#hero-experience" class="btn btn-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">&uarr; Back to Top</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 KAARTHI LIFTS. All rights reserved.</p>
+                <p>Designed for elite human performance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- REAL-TIME APPLICATION STATUS TRACKER MODAL -->
+    <div id="tracker-modal" class="tracker-modal-overlay" style="display: none;">
+        <div class="tracker-card">
+            <button class="modal-close" id="tracker-modal-close" aria-label="Close modal">&times;</button>
+            <div class="tracker-icon">⚡</div>
+            <h3>TRACK CONSULTATION STATUS</h3>
+            <p>Enter your 7-character Application Reference (e.g. <strong>KL-9021</strong>) to view your live status.</p>
+            <div class="tracker-input-row">
+                <input type="text" id="tracker-ref-input" placeholder="e.g. KL-9021" class="form-control" autocomplete="off">
+                <button type="button" id="tracker-submit-btn" class="btn btn-primary">Check Status</button>
+            </div>
+            <div id="tracker-result" class="tracker-result-box" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- REAL-TIME LIVE CHAT WIDGET -->
+    <div class="realtime-chat-widget" id="realtime-chat-widget">
+        <!-- Floating Trigger Button -->
+        <button class="chat-trigger-btn" id="chat-trigger-btn" aria-label="Chat with Coach Kaarthi">
+            <span class="chat-pulse-ring"></span>
+            <span class="chat-icon">💬</span>
+            <span class="chat-trigger-text">Ask Kaarthi <span class="live-dot-green"></span></span>
+        </button>
+
+        <!-- Chat Popup Window -->
+        <div class="chat-popup-window" id="chat-popup-window" style="display: none;">
+            <div class="chat-popup-header">
+                <div class="popup-coach-info">
+                    <div class="coach-avatar-wrap">
+                        <span class="coach-avatar-text">KL</span>
+                        <span class="avatar-status-dot"></span>
+                    </div>
+                    <div>
+                        <h4>Coach Kaarthi</h4>
+                        <span class="coach-status-sub" id="widget-coach-status">Online &bull; Instant Reply</span>
+                    </div>
+                </div>
+                <button class="chat-close-btn" id="chat-close-btn" aria-label="Close Chat">&times;</button>
+            </div>
+
+            <div class="chat-popup-body" id="chat-popup-messages">
+                <div class="chat-bubble-client from-coach">
+                    <p>Hey! I'm Coach Kaarthi. Whether you want advice choosing between our 8-week vs 12-week hypertrophy programs or tailored nutrition questions, ask me here live!</p>
+                    <span class="msg-timestamp">Just now</span>
+                </div>
+            </div>
+
+            <!-- Quick Inquiry Chips -->
+            <div class="quick-inquiry-chips" id="quick-inquiry-chips">
+                <button class="chip-btn" data-text="What does the 12-Week Elite Transformation include?">12-Week Program?</button>
+                <button class="chip-btn" data-text="Can you customize meal plans for vegetarian lifters?">Veg Diet Plan?</button>
+                <button class="chip-btn" data-text="How quickly do we start after booking consultation?">Start Timeline?</button>
+            </div>
+
+            <div class="chat-typing-status" id="chat-typing-status" style="display: none;">
+                Coach Kaarthi is typing...
+            </div>
+
+            <form class="chat-popup-input-area" id="client-chat-form">
+                <input type="text" id="client-chat-input" placeholder="Type your message..." autocomplete="off" required>
+                <button type="submit" class="chat-send-btn" aria-label="Send message">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- REAL-TIME SOCIAL PROOF TOAST -->
+    <div id="social-proof-toast" class="social-proof-toast" style="display: none;">
+        <span class="toast-bolt">⚡</span>
+        <div class="toast-content">
+            <p id="toast-title" class="toast-title">New Consultation Booked</p>
+            <span id="toast-time" class="toast-time">Just now</span>
+        </div>
+    </div>
+
+    <!-- SOCKET.IO & LOGIC SCRIPT -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+
+    <a href="#" id="floating-whatsapp-btn" class="floating-whatsapp-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2c-5.523 0-10 4.477-10 10 0 1.767.462 3.484 1.34 5.006L2 22l5.13-1.318A9.958 9.958 0 0 0 12.004 22c5.523 0 10-4.477 10-10s-4.477-10-10-10zm0 18.166a8.13 8.13 0 0 1-4.148-1.134l-.297-.176-3.048.783.815-2.968-.193-.305A8.14 8.14 0 1 1 12.004 20.166z"/></svg>
+    </a>
+</body>
+</html>

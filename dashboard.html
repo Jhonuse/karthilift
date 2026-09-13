@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Progress — Kaarthi Lifts</title>
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="client.css">
+</head>
+<body class="client-dash-body">
+  <header class="client-dash-header">
+    <h2>Kaarthi Lifts</h2>
+    <div>
+      <span id="client-name"></span>
+      <button id="logout-btn" class="btn btn-secondary">Logout</button>
+    </div>
+  </header>
+
+  <main class="client-dash-main">
+    <section class="dash-card">
+      <h3>Your Status</h3>
+      <p>Reference: <strong id="c-ref"></strong></p>
+      <p>Plan: <strong id="c-plan"></strong></p>
+      <p>Status: <span id="c-status" class="status-pill"></span></p>
+      <p>Payment: <span id="c-payment" class="status-pill"></span></p>
+    </section>
+
+    <section class="dash-card">
+      <h3>Progress Timeline</h3>
+      <div id="progress-list" class="progress-list"></div>
+    </section>
+
+    <section class="dash-card">
+      <h3>Make a Payment</h3>
+      <form id="payment-form" class="payment-form">
+        <input type="number" id="pay-amount" placeholder="Amount (₹)" required min="1">
+        <select id="pay-method" required>
+          <option value="">Payment Method</option>
+          <option value="UPI">UPI</option>
+          <option value="Bank Transfer">Bank Transfer</option>
+          <option value="Card">Card</option>
+        </select>
+        <input type="text" id="pay-ref" placeholder="UTR / Transaction ID (optional)">
+        <button type="submit" class="btn btn-primary">Pay & Confirm on WhatsApp →</button>
+      </form>
+      <p class="auth-hint">After paying, click confirm — it opens WhatsApp so the coach can verify instantly.</p>
+    </section>
+  </main>
+
+  <script>
+    const token = localStorage.getItem('kl_client_token');
+    if (!token) window.location.href = 'login.html';
+
+    async function loadDashboard() {
+      const res = await fetch('/api/client/me', { headers: { Authorization: 'Bearer ' + token } });
+      if (!res.ok) { localStorage.removeItem('kl_client_token'); window.location.href = 'login.html'; return; }
+      const data = await res.json();
+      document.getElementById('client-name').textContent = data.client.name;
+      document.getElementById('c-ref').textContent = data.client.ref_code;
+      document.getElementById('c-plan').textContent = data.client.plan;
+      document.getElementById('c-status').textContent = data.client.status;
+      document.getElementById('c-payment').textContent = data.client.payment_status;
+
+      const list = document.getElementById('progress-list');
+      list.innerHTML = data.progress.length
+        ? data.progress.map(p => `
+            <div class="progress-item">
+              <div class="progress-date">${p.entry_date}</div>
+              ${p.photo_url ? `<img src="${p.photo_url}" alt="progress photo">` : ''}
+              ${p.weight ? `<div class="progress-weight">${p.weight} kg</div>` : ''}
+              <div class="progress-note">${p.note || ''}</div>
+            </div>`).join('')
+        : '<p class="auth-hint">Your coach will start logging progress here soon.</p>';
+
+      window.__klWhatsapp = data.whatsapp_number;
+    }
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      localStorage.removeItem('kl_client_token');
+      window.location.href = 'login.html';
+    });
+
+    document.getElementById('payment-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const amount = document.getElementById('pay-amount').value;
+      const method = document.getElementById('pay-method').value;
+      const reference = document.getElementById('pay-ref').value;
+      const res = await fetch('/api/client/payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token },
+        body: JSON.stringify({ amount, method, reference })
+      });
+      const data = await res.json();
+      if (res.ok) window.open(data.whatsapp_url, '_blank');
+    });
+
+    loadDashboard();
+  </script>
+</body>
+</html>

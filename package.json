@@ -1,0 +1,24 @@
+{
+  "name": "kaarthi-lifts-fullstack",
+  "version": "1.0.0",
+  "description": "Fullstack real-time personal training platform with live consultation tracker, active visitor metrics, live coach chat, and admin command center",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "setup:appwrite": "node server/appwrite-setup.js",
+    "test": "node test/api_test.js"
+  },
+  "keywords": ["fitness", "personal-training", "fullstack", "realtime", "socketio", "appwrite"],
+  "author": "Kaarthi Lifts",
+  "license": "ISC",
+  "dependencies": {
+    "node-appwrite": "^29.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
+}

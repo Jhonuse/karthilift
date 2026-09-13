@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaarthi Lifts — Coach Admin Command Center</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+
+    <!-- AUTHENTICATION MODAL OVERLAY -->
+    <div id="auth-modal" class="auth-overlay">
+        <div class="auth-card">
+            <div class="auth-icon">⚡</div>
+            <h2>COACH COMMAND CENTER</h2>
+            <p>Enter your coach security PIN to access live consultations, visitor metrics, and chat.</p>
+            <form id="auth-form">
+                <div class="input-wrap">
+                    <input type="password" id="auth-pin" placeholder="Enter Coach PIN (default: kaarthi2026)" autocomplete="off" required>
+                </div>
+                <button type="submit" class="admin-btn admin-btn-gold">UNLOCK DASHBOARD &rarr;</button>
+                <div id="auth-error" class="auth-error"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MAIN APP WRAPPER -->
+    <div id="admin-app" class="admin-layout" style="display: none;">
+        
+        <!-- HEADER -->
+        <header class="admin-header">
+            <div class="header-left">
+                <div class="admin-brand">
+                    <span class="brand-bolt">⚡</span>
+                    <span class="brand-title">KAARTHI <span>LIFTS</span></span>
+                    <span class="badge-tag">COMMAND CENTER</span>
+                </div>
+                <div class="live-status-pill">
+                    <span class="pulse-dot"></span>
+                    <span id="connection-status">CONNECTED REAL-TIME</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="live-visitor-hud">
+                    <span class="visitor-eye">👁️</span>
+                    <span class="visitor-label">LIVE VISITORS:</span>
+                    <span id="header-visitors-count" class="visitor-number">1</span>
+                </div>
+                <button id="sound-toggle-btn" class="header-btn" title="Toggle Sound Alerts">
+                    🔔 <span id="sound-status-text">Audio: ON</span>
+                </button>
+                <a href="/" target="_blank" class="header-btn header-btn-outline" title="Open Visitor Site">
+                    ↗ View Site
+                </a>
+                <button id="logout-btn" class="header-btn header-btn-danger">Lock</button>
+            </div>
+        </header>
+
+        <!-- TOP STATS METRIC HUD -->
+        <section class="admin-metrics-grid">
+            <div class="metric-card">
+                <div class="metric-icon">👁️</div>
+                <div class="metric-info">
+                    <span class="metric-label">Active Browsers</span>
+                    <div class="metric-val" id="stat-active-visitors">1</div>
+                    <span class="metric-sub">Connected via WebSockets</span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon">⚡</div>
+                <div class="metric-info">
+                    <span class="metric-label">Batch Remaining Slots</span>
+                    <div class="metric-val flex-val">
+                        <span id="stat-slots-remaining">3</span>
+                        <div class="slot-adjust-quick">
+                            <button id="btn-slot-minus" title="Deduct Slot">-</button>
+                            <button id="btn-slot-plus" title="Add Slot">+</button>
+                        </div>
+                    </div>
+                    <span class="metric-sub" id="stat-batch-title">March 2026 Cohort</span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon">📥</div>
+                <div class="metric-info">
+                    <span class="metric-label">New Applications</span>
+                    <div class="metric-val gold-accent" id="stat-new-leads">0</div>
+                    <span class="metric-sub">Pending review</span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon">🏆</div>
+                <div class="metric-info">
+                    <span class="metric-label">Enrolled Athletes</span>
+                    <div class="metric-val green-accent" id="stat-enrolled-leads">0</div>
+                    <span class="metric-sub">Confirmed transformations</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD NAVIGATION TABS -->
+        <nav class="admin-tabs">
+            <button class="tab-btn active" data-tab="leads-view">
+                📋 Consultation Inquiries (<span id="leads-count-badge">0</span>)
+            </button>
+            <button class="tab-btn" data-tab="chat-view">
+                💬 Live Visitor Messenger (<span id="unread-chats-badge">0</span>)
+            </button>
+            <button class="tab-btn" data-tab="settings-view">
+                ⚙️ Live Batch & Availability Settings
+            </button>
+            <button class="tab-btn" data-tab="progress-view">
+                📈 Client Progress & Payments
+            </button>
+        </nav>
+
+        <!-- TAB CONTENT 1: CONSULTATION LEADS -->
+        <main id="leads-view" class="tab-panel active">
+            <div class="panel-actions">
+                <div class="search-wrap">
+                    <input type="text" id="lead-search-input" placeholder="Search athletes by name, phone, email, goal...">
+                </div>
+                <div class="filter-pills">
+                    <button class="filter-pill active" data-filter="all">All</button>
+                    <button class="filter-pill" data-filter="new">New Only</button>
+                    <button class="filter-pill" data-filter="contacted">Contacted</button>
+                    <button class="filter-pill" data-filter="enrolled">Enrolled</button>
+                </div>
+                <button id="refresh-leads-btn" class="admin-btn admin-btn-sm admin-btn-outline">↻ Refresh</button>
+            </div>
+
+            <div id="leads-container" class="leads-grid">
+                <!-- Dynamic lead cards injected by admin.js -->
+            </div>
+        </main>
+
+        <!-- TAB CONTENT 2: LIVE VISITOR MESSENGER -->
+        <section id="chat-view" class="tab-panel">
+            <div class="chat-dashboard-container">
+                <div class="chat-sidebar">
+                    <div class="sidebar-header">
+                        <h4>Active Conversations</h4>
+                        <span id="chat-threads-count" class="badge-count">0</span>
+                    </div>
+                    <div id="chat-threads-list" class="threads-list">
+                        <!-- Populated by admin.js -->
+                    </div>
+                </div>
+
+                <div class="chat-main-area">
+                    <div id="chat-empty-state" class="chat-empty">
+                        <div class="empty-icon">💬</div>
+                        <h3>Select a conversation to reply in real time</h3>
+                        <p>Messages stream live directly between you and site visitors.</p>
+                    </div>
+
+                    <div id="chat-active-window" class="chat-active-window" style="display: none;">
+                        <div class="chat-window-header">
+                            <div>
+                                <h4 id="active-chat-user">Prospective Athlete</h4>
+                                <span class="active-chat-session-id" id="active-chat-session-id">Session: #...</span>
+                            </div>
+                            <div class="header-chat-actions">
+                                <button id="btn-quick-macro-advice" class="chip-action">💡 Send Meal Advice</button>
+                                <button id="btn-quick-program-advice" class="chip-action">🏋️ Send Program Info</button>
+                            </div>
+                        </div>
+
+                        <div id="admin-chat-messages" class="chat-messages-scroll">
+                            <!-- Messages stream here -->
+                        </div>
+
+                        <div id="admin-typing-indicator" class="typing-indicator" style="display: none;">
+                            Visitor is typing...
+                        </div>
+
+                        <form id="admin-chat-form" class="chat-input-bar">
+                            <input type="text" id="admin-chat-input" placeholder="Type your reply as Coach Kaarthi..." autocomplete="off">
+                            <button type="submit" class="admin-btn admin-btn-gold">SEND</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB CONTENT 3: LIVE BATCH & AVAILABILITY SETTINGS -->
+        <section id="settings-view" class="tab-panel">
+            <div class="settings-card">
+                <h3>Live Cohort & Website Availability Controller</h3>
+                <p class="subtitle">Any adjustments here immediately push live to every visitor on the website without page reloading.</p>
+
+                <form id="settings-form">
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label>Current Cohort Name</label>
+                            <input type="text" id="setting-batch-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Coach Status Pill Text</label>
+                            <input type="text" id="setting-coach-status" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label>Total Slots Capacity</label>
+                            <input type="number" id="setting-total-slots" class="form-control" min="1" max="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Slots Remaining (Live Counter)</label>
+                            <input type="number" id="setting-slots-remaining" class="form-control" min="0" max="100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Coach Security PIN (Current PIN)</label>
+                        <input type="text" id="setting-admin-pin" class="form-control" placeholder="Update PIN (min 4 characters)">
+                    </div>
+
+                    <div class="settings-save-row">
+                        <button type="submit" class="admin-btn admin-btn-gold">SAVE & BROADCAST TO LIVE SITE &rarr;</button>
+                        <span id="settings-save-notification" class="save-msg"></span>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- TAB CONTENT 4: CLIENT PROGRESS & PAYMENTS -->
+        <section id="progress-view" class="tab-panel">
+            <div class="settings-card">
+                <h3>Client Progress & Payment Manager</h3>
+                <div class="form-group">
+                    <label>Select Client</label>
+                    <select id="progress-client-select" class="form-control"></select>
+                </div>
+
+                <div id="progress-panel-body" style="display:none;">
+                    <h4>Add Progress Entry</h4>
+                    <form id="progress-add-form" class="form-row-2">
+                        <div class="form-group"><label>Date</label><input type="date" id="pg-date" class="form-control"></div>
+                        <div class="form-group"><label>Weight (kg)</label><input type="number" step="0.1" id="pg-weight" class="form-control"></div>
+                        <div class="form-group" style="grid-column:1/-1;"><label>Photo URL</label><input type="text" id="pg-photo" class="form-control" placeholder="https://..."></div>
+                        <div class="form-group" style="grid-column:1/-1;"><label>Note</label><input type="text" id="pg-note" class="form-control"></div>
+                        <button type="submit" class="admin-btn admin-btn-gold" style="grid-column:1/-1;">Add Entry</button>
+                    </form>
+                    <div id="progress-entries-list" style="margin-top:16px;"></div>
+
+                    <h4 style="margin-top:24px;">Payments</h4>
+                    <div id="payments-list"></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- AUDIO ELEMENT FOR LIVE ALERTS -->
+    <audio id="lead-alert-audio" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQ4GAACBhYqFbF1fdJivrJBhNjVgodDbq2EcHCek2/LDci8ZIZ7e8s95LhUenN7x1n4uFhyc3vLVfi8XG5ze89Z9LxcbnN70134vFhqc3/TXfi8XG5zf9Nd+LxcbnN7z1n4vFhqc3vPWfS4XG5ze89Z9LxcbnN7z1n4vFhqc3vPXfi8X" type="audio/wav">
+    </audio>
+
+    <script src="admin.js"></script>
+</body>
+</html>

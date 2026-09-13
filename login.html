@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Login — Kaarthi Lifts</title>
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="client.css">
+</head>
+<body class="client-auth-body">
+  <div class="client-auth-card">
+    <h2>Kaarthi Lifts — Client Portal</h2>
+    <div class="client-auth-tabs">
+      <button type="button" class="tab-btn active" data-tab="login">Login</button>
+      <button type="button" class="tab-btn" data-tab="register">Create Account</button>
+    </div>
+
+    <form id="login-form" class="client-auth-form">
+      <label>Reference Code (e.g. KL-9021)</label>
+      <input type="text" id="login-ref" required placeholder="KL-0000">
+      <label>Password</label>
+      <input type="password" id="login-pass" required>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <p class="auth-error" id="login-error"></p>
+    </form>
+
+    <form id="register-form" class="client-auth-form" style="display:none;">
+      <p class="auth-hint">Already had a free consultation? Set a password using the reference code sent to you.</p>
+      <label>Reference Code</label>
+      <input type="text" id="reg-ref" required placeholder="KL-0000">
+      <label>Create Password (min 6 chars)</label>
+      <input type="password" id="reg-pass" required minlength="6">
+      <button type="submit" class="btn btn-primary">Create Account</button>
+      <p class="auth-error" id="register-error"></p>
+    </form>
+
+    <a href="../../index.html#contact" class="auth-back-link">Haven't booked a free consultation yet? Start here →</a>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    tabs.forEach(btn => btn.addEventListener('click', () => {
+      tabs.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('login-form').style.display = btn.dataset.tab === 'login' ? 'flex' : 'none';
+      document.getElementById('register-form').style.display = btn.dataset.tab === 'register' ? 'flex' : 'none';
+    }));
+
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const ref_code = document.getElementById('login-ref').value.trim();
+      const password = document.getElementById('login-pass').value;
+      const errEl = document.getElementById('login-error');
+      errEl.textContent = '';
+      try {
+        const res = await fetch('/api/client/login', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ref_code, password })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Login failed');
+        localStorage.setItem('kl_client_token', data.token);
+        window.location.href = 'dashboard.html';
+      } catch (err) { errEl.textContent = err.message; }
+    });
+
+    document.getElementById('register-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const ref_code = document.getElementById('reg-ref').value.trim();
+      const password = document.getElementById('reg-pass').value;
+      const errEl = document.getElementById('register-error');
+      errEl.textContent = '';
+      try {
+        const res = await fetch('/api/client/register', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ref_code, password })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Registration failed');
+        errEl.style.color = '#2ecc71';
+        errEl.textContent = 'Account created! Switch to Login.';
+      } catch (err) { errEl.textContent = err.message; }
+    });
+  </script>
+</body>
+</html>
